@@ -4,14 +4,15 @@ import { GistData } from 'src/types/GistData';
 export interface GistsState {
   isLoading: boolean;
   gists: GistData[];
-  error?: string;
+  error: string | null;
   totalPages: number;
 }
 
 const initialState: GistsState = {
   isLoading: true,
   gists: [],
-  totalPages: 1
+  totalPages: 1,
+  error: null
 };
 
 const gistsSlice = createSlice({
@@ -21,7 +22,7 @@ const gistsSlice = createSlice({
     setGists(state, action: PayloadAction<GistData[]>) {
       state.gists = action.payload;
     },
-    setGistsError(state, action: PayloadAction<string>) {
+    setGistsError(state, action: PayloadAction<string | null>) {
       state.error = action.payload;
     },
     setIsLoading(state, action: PayloadAction<boolean>) {

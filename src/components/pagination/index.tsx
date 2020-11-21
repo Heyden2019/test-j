@@ -2,7 +2,7 @@ import { Grid } from '@material-ui/core';
 import React, { FC } from 'react';
 import Pagination from '@material-ui/lab/Pagination';
 
-type PropsType ={
+type PropsType = {
     totalPages: number,
     page: number,
     onChange: any
