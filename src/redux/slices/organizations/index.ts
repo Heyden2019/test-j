@@ -12,7 +12,7 @@ const initialState: OrganizationsState = {
   isLoading: true,
   organizations: [],
   error: null,
-  since: 0
+  since: 0,
 };
 
 const organizationsSlice = createSlice({
@@ -34,5 +34,10 @@ const organizationsSlice = createSlice({
   },
 });
 
-export const { setOrganizations, setOrganizationsError, setIsLoading, setSince } = organizationsSlice.actions;
+export const {
+  setOrganizations,
+  setOrganizationsError,
+  setIsLoading,
+  setSince,
+} = organizationsSlice.actions;
 export const organizationsReducer = organizationsSlice.reducer;

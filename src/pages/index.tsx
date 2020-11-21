@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar/Toolbar';
 import Typography from '@material-ui/core/Typography/Typography';
 import { Container, CssBaseline, Link } from '@material-ui/core';
 
-export interface DashboardProps { }
+export interface DashboardProps {}
 
 const Dashboard: NextPage<DashboardProps> = () => {
   return (
@@ -19,12 +19,13 @@ const Dashboard: NextPage<DashboardProps> = () => {
             <Typography variant="h6" color="inherit" noWrap>
               Test Task
             </Typography>
-            <Link href="/organizations"
+            <Link
+              href="/organizations"
               variant="h6"
               onClick={(e: any) => e.preventDefault}
-              style={{ color: "white" }}>
+            >
               Organizations
-          </Link>
+            </Link>
           </Grid>
         </Toolbar>
       </AppBar>

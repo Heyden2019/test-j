@@ -12,7 +12,7 @@ const initialState: GistsState = {
   isLoading: true,
   gists: [],
   totalPages: 1,
-  error: null
+  error: null,
 };
 
 const gistsSlice = createSlice({
@@ -30,9 +30,14 @@ const gistsSlice = createSlice({
     },
     setTotalPages(state, action: PayloadAction<number>) {
       state.totalPages = action.payload;
-    }
+    },
   },
 });
 
-export const { setGists, setGistsError, setIsLoading, setTotalPages } = gistsSlice.actions;
+export const {
+  setGists,
+  setGistsError,
+  setIsLoading,
+  setTotalPages,
+} = gistsSlice.actions;
 export const gistsReducer = gistsSlice.reducer;

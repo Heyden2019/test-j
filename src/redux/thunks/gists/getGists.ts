@@ -1,4 +1,9 @@
-import { setGists, setGistsError, setIsLoading, setTotalPages } from 'src/redux/slices/gists';
+import {
+  setGists,
+  setGistsError,
+  setIsLoading,
+  setTotalPages,
+} from 'src/redux/slices/gists';
 import { AppThunk } from 'src/redux/Store';
 import { GITHUB_API } from '../config';
 
@@ -14,13 +19,15 @@ export const getGists = (params: GetGistsParams = {}): AppThunk => async (
   dispatch(setIsLoading(true));
   dispatch(setGistsError(null));
   const { page = 0, inPage = 10, since } = params;
-  if(page === 0) dispatch(setTotalPages(1))
+  if (page === 0) {
+    dispatch(setTotalPages(1));
+  }
 
   let url = `${GITHUB_API}/gists/public?page=${page}&per_page=${inPage}`;
 
   if (since) {
     url += `&since=${since.toISOString()}`;
-  };
+  }
 
   const headers = new Headers({
     Accept: 'application/vnd.github.v3+json',
@@ -28,10 +35,11 @@ export const getGists = (params: GetGistsParams = {}): AppThunk => async (
 
   try {
     const response = await fetch(url, { headers });
+    // eslint-disable-next-line no-useless-escape
     const re = new RegExp(/(?<=\?page=)([\d]+)(?=[^,]+rel=\"last\")/, 'g');
-    const pages = +((response.headers.get('link')?.match(re) || [page])[0]);
+    const pages = +(response.headers.get('link')?.match(re) || [page])[0];
     const json = await response.json();
-    if(json.message) {
+    if (json.message) {
       dispatch(setGistsError(json.message));
     } else {
       dispatch(setTotalPages(pages));

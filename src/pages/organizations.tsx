@@ -15,16 +15,13 @@ const Dashboard: NextPage<DashboardProps> = () => {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-        <Grid container spacing={6} direction="column" wrap="nowrap">
-          <Typography variant="h6" color="inherit" noWrap>
-            Test Task
-          </Typography>
-          <Link href="/" 
-                variant="h6"
-                onClick={(e: any) => e.preventDefault}
-                style={{color: "white"}}>
-            Gists
-          </Link>
+          <Grid container spacing={6} direction="column" wrap="nowrap">
+            <Typography variant="h6" color="inherit" noWrap>
+              Test Task
+            </Typography>
+            <Link href="/" variant="h6" onClick={(e: any) => e.preventDefault}>
+              Gists
+            </Link>
           </Grid>
         </Toolbar>
       </AppBar>
