@@ -39,13 +39,5 @@ export const theme = createMuiTheme({
         marginBottom: 10,
       },
     },
-    MuiLink: {
-      root: {
-        color: yellow[400],
-      },
-      button: {
-        color: yellow[400],
-      },
-    },
   },
 });

@@ -23,6 +23,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
               href="/organizations"
               variant="h6"
               onClick={(e: any) => e.preventDefault}
+              style={{ color: 'white' }}
             >
               Organizations
             </Link>

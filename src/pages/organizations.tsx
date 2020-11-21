@@ -19,7 +19,12 @@ const Dashboard: NextPage<DashboardProps> = () => {
             <Typography variant="h6" color="inherit" noWrap>
               Test Task
             </Typography>
-            <Link href="/" variant="h6" onClick={(e: any) => e.preventDefault}>
+            <Link
+              href="/"
+              variant="h6"
+              onClick={(e: any) => e.preventDefault}
+              style={{ color: 'white' }}
+            >
               Gists
             </Link>
           </Grid>
