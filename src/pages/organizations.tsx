@@ -15,7 +15,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-        <Grid container spacing={6} direction="row" wrap="nowrap">
+        <Grid container spacing={6} direction="column" wrap="nowrap">
           <Typography variant="h6" color="inherit" noWrap>
             Test Task
           </Typography>
